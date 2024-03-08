@@ -1,4 +1,4 @@
-[TOC]
+##### Table of Contents  
 
 This guide is written to enable reading the battery information of a Pylontech `US2000C` and sending the data to IoBroker via `MQTT`. 
 
