@@ -1,0 +1,85 @@
+>D 64
+;variablen für berechnungen
+res=0
+rstr=""
+label=""
+lraw=""
+val=0
+volt=0
+curr=0
+temp=0
+coul=0
+
+
+>B
+
+res=0
+res=so(3 1 115200 8N1 1024)
+;print open %res%
+
+
+>F
+
+res=sa()
+if res>0
+then
+;print res=%res%
+
+rstr=sr(10)
+rstr=sb(rstr 1 sl(rstr))
+;print read %rstr%
+
+label=sb(rstr 0 7)
+lraw=sb(rstr 0 10)
+
+val=st(rstr : 2)
+
+switch label
+
+case "Voltage"
+volt=val/1000
+case "Current"
+
+if lraw=="Current   "
+then
+curr=val
+endif
+
+case "Tempera"
+temp=val/1000
+case "Coulomb"
+coul=val
+ends
+
+endif
+
+
+>S
+
+if upsecs%5==0
+then
+res=sw("pwr 1\n")
+;print write cmd
+endif
+
+;print %volt% %curr% %temp% %coul%
+
+>T
+
+; sende mqqt-Einzeltopis zusätzlich/anstatt json wie unter ">J)
+
+=>publish iot/%topic%/Voltage %4volt%
+=>publish iot/%topic%/Current %0curr%
+=>publish iot/%topic%/Charge %0coul%
+
+>W
+
+Spannung{m}%4volt% V
+Strom{m}%0curr% mA
+Temperatur{m}%3temp% C
+Ladung{m}%0coul% %%
+
+>J
+
+,"pylon":{"Voltage":%4volt%,"Current":%0curr%,"Charge":%0coul%,"Temperature":%3temp%}
+#
