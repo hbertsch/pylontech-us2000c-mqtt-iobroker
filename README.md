@@ -1,4 +1,19 @@
-##### Table of Contents  
+- [Introduction](#introduction)
+- [Requirements](#requirements)
+  - [Hardware](#hardware)
+  - [Software](#software)
+- [Uploading the Firmware](#uploading-the-firmware)
+  - [Setup Script](#setup-script)
+  - [Detect Your Board on the Serials](#detect-your-board-on-the-serials)
+  - [Uploading the Firmware](#uploading-the-firmware-1)
+- [Wiring of the RS232 Adapter](#wiring-of-the-rs232-adapter)
+- [Tasmota Script](#tasmota-script)
+- [US2000C Settings](#us2000c-settings)
+- [Connecting to IoBroker](#connecting-to-iobroker)
+  - [MQTT Host Adapter Configuration](#mqtt-host-adapter-configuration)
+  - [Tasmota MQTT Configuration](#tasmota-mqtt-configuration)
+  - [Tasmota Telemetry Settings](#tasmota-telemetry-settings)
+  - [IoBroker Readings](#iobroker-readings)
 
 This guide is written to enable reading the battery information of a Pylontech `US2000C` and sending the data to IoBroker via `MQTT`. 
 
