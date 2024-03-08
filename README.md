@@ -4,6 +4,8 @@ This guide is written to enable reading the battery information of a Pylontech `
 
 This is done by using a special Tasmota build and some Arduino hardware as well as an RS232 to TTL adapter.
 
+I used the pre-compiled firmware from [this thread](https://forum.creationx.de/forum/index.php?thread/3526-pylontech-us2000-mit-tasmota-auslesen/&pageNo=1) (kudos to [gemu2015](https://forum.creationx.de/index.php?user/1660-gemu2015/)  and [opferwurst](https://forum.creationx.de/index.php?user/1593-opferwurst/)) but you can compile your own version of Tasmota following the instructions from the original thread.
+
 # Requirements
 
 - Pylontech US2000C battery (obviously)
@@ -70,6 +72,12 @@ The script you need to paste is in the script [US2000C_tasmota_script.txt](US200
 If everything runs fine, you should get the following readings:
 
 <img src="resources/tasmota_readings.png" alt="tasmota_readings" style="zoom:50%;" />
+
+# US2000C Settings
+
+All switches in upward position - next to the numbers (should be the factory default)
+
+<img src="resources/us2000c_switches.png" alt="us2000c_switches" style="zoom:50%;" />
 
 # Connecting to IoBroker
 
