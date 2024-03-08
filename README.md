@@ -10,7 +10,9 @@ I used the pre-compiled firmware from [this thread](https://forum.creationx.de/f
 
 - Pylontech US2000C battery (obviously)
 - ESP8266 (e.g. d1 mini or NodeMCU)
+  <img src="resources/d1mini.png" alt="d1mini" style="zoom:25%;" />
 - RS232 Adapter [MAX3232](https://www.amazon.de/dp/B09DYDFZRW)
+  <img src="resources/rs232max.png" alt="rs232max" style="zoom:25%;" />
 - Standard RJ45 cable (T568B order)
 - Some cable, soldering iron, shrink tubes and maybe a glue gun
 
@@ -53,7 +55,7 @@ We only need the following lines of the RJ45 cable:
 
 > **Beware**: the wiring of T568A is different and the colors may change 
 
-After successfuly testing it, I fixated the wiring using a hot-glue gun.
+After successfully testing it, I fixated the wiring using a hot-glue gun.
 
 <img src="resources/rs232_rj45_wiring_head.png" alt="rs232_rj45_wiring_head" style="zoom:50%;" />
 
@@ -63,7 +65,7 @@ After successfuly testing it, I fixated the wiring using a hot-glue gun.
 
 # Tasmota Script
 
-Orginally taken from the [thread of opferwurst](https://forum.creationx.de/forum/index.php?thread/3526-pylontech-us2000-mit-tasmota-auslesen/) (many thanks for the information!).  Simply paste the script into the scripting section of your running Tasmota device and save it. Don't forgett to increase the default logging frequency from (default) 300 to a lower interval (e.g. 10).
+Originally taken from the [thread of opferwurst](https://forum.creationx.de/forum/index.php?thread/3526-pylontech-us2000-mit-tasmota-auslesen/) (many thanks for the information!).  Simply paste the script into the scripting section of your running Tasmota device and save it. Don't forget to increase the default logging frequency from (default) 300 to a lower interval (e.g. 10).
 
 <img src="resources/tasmota_script.png" alt="tasmota_script" style="zoom:25%;" />
 
@@ -93,6 +95,6 @@ Now configure the logging interval to `10`, so you get frequent readings:
 
 <img src="resources/tasmota_telemetry_settings.png" alt="tasmota_telemetry_settings" style="zoom: 33%;" />
 
-Now you should be able to see the values beeing updated in IoBroker:
+Now you should be able to see the values being updated in IoBroker:
 
 ![IoBroker_readings](resources/IoBroker_readings.png)
