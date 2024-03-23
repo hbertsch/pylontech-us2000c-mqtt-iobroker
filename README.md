@@ -14,6 +14,8 @@
   - [Tasmota MQTT Configuration](#tasmota-mqtt-configuration)
   - [Tasmota Telemetry Settings](#tasmota-telemetry-settings)
   - [IoBroker Readings](#iobroker-readings)
+  
+- [US2000C Firmware Upgrade](#us2000c-firmware-upgrade)
 
 This guide is written to enable reading the battery information of a Pylontech `US2000C` and sending the data to IoBroker via `MQTT`. 
 
@@ -113,3 +115,19 @@ Now configure the logging interval to `10`, so you get frequent readings:
 Now you should be able to see the values being updated in IoBroker:
 
 ![IoBroker_readings](resources/IoBroker_readings.png)
+
+# US2000C Firmware Upgrade
+
+In the `tools` repository folder you can find all (onfortunatley Windows only) tools to upgrade your US2000Cs firmware. 
+
+- [Original link](https://www.effekta.com/produkt/batterien-us2000c-us3000c/) to firmware update tool
+- The battery view tool I found in a forum thread
+
+A good video tutorial source can be found [here](https://www.youtube.com/watch?v=izZphGWnwn8). 
+
+> **Notice**: you need a working serial adapter that works with your OS in order to do so. The video tutorial is explaining a bit more about it. But at the end you will need a `LogiLink® USB 2.0 to Seriell Adapter`
+
+- Step 1: try to connect to your battery with the `BartteryView` tool and read what firmware is installed on your battery. Example output:
+  <img src="tools/US2000C-pre-update.png" alt="US2000C-pre-update" style="zoom:50%;" />
+- Step 2: close the `BatteryView` tool and connect with the `Firmwareupdate` tool. Select the firmware `zip` file and upload it. After successful upgrad it should look like this:
+  ![US2000C-post-update](tools/US2000C-post-update.png)
